@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="main contract">
+      <header class="header">
+        <img
+          src="./images/hamburger.png"
+          onclick="openMenu()"
+          class="hamburger"
+          alt=""
+        />
+        <a href="/"><img src="./images/logo.png" class="logo" alt="" /></a>
+        <a class="adaptiv" href="tel:7466">☎️7466 </a>
+
+        <a
+          class="adaptiv"
+          target="_blank"
+          href="viber://chat?number=+375336150464"
+          ><img src="./images/viber.png" alt=""
+        /></a>
+        <a class="adaptiv" target="_blank" href="https://t.me/+375336150464"
+          ><img src="./images/tg.png" alt=""
+        /></a>
+        <section class="anchors">
+          <a href="#price">Цены</a><a href="#services">Услуги</a
+          ><a href="#reviews">Отзывы</a>
+          <a href="#contact">Контакты</a>
+        </section>
+        <section class="anchors">
+          <h1 class="phone">
+            <a href="tel:7466">☎️7466 </a>
+            <p>8:00-20:00 БЕЗ ВЫХОДНЫХ</p>
+          </h1>
+          <a target="_blank" href="viber://chat?number=+375336150464"
+            ><img src="./images/viber.png" alt=""
+          /></a>
+          <a target="_blank" href="https://t.me/+375336150464"
+            ><img src="./images/tg.png" alt=""
+          /></a>
+        </section>
+      </header>
+      <nav class="header nav">
+        <section class="nav">
+          <a href="#price">Цены</a><a href="#services">Услуги</a
+          ><a href="#reviews">Отзывы</a>
+          <a href="#contact">Контакты</a>
+        </section>
+      </nav>
+      <div class="introducing">
+        <div>
+          <h1>Предложение для БИЗНЕСА</h1>
+          <span class="line"></span>
+          <p>
+            В вашем заведении есть ковер? Его надо почистить? <br />
+            С нами это очень удобно
+          </p>
+          <p>
+            Просто заполните форму ниже, подпишите договор, и курьер едет к вам!
+            У вас будет 7 дней <br />
+            на оплату, а у нас на то, что бы сделать ваш ковер идеально чистым.
+          </p>
+        </div>
+      </div>
+      <div class="form">
+        <section><img src="./images/cofee.jpeg" alt="" /></section>
+        <div class="right">
+          <h1>Для юридических лиц</h1>
+          <p>Заполните реквизиты и мы тут же вышлем вам договор</p>
+          <form class="forma">
+            <label>
+              <h2>Наименование юрлица</h2>
+              <input class="input" type="text" name="company_name" />
+            </label>
+            <label>
+              <h2>В лице кого (в род. падеже)</h2>
+              <input
+                class="input"
+                type="text"
+                value="директора"
+                name="company_director"
+              />
+            </label>
+            <label>
+              <h2>Действующего на основании чего (в род. падеже)</h2>
+              <input
+                class="input"
+                type="text"
+                placeholder=""
+                value="устава"
+                name="company_doc"
+              />
+            </label>
+            <label>
+              <h2>Юридический адрес</h2>
+              <input class="input" type="text" name="company_address" />
+            </label>
+            <label>
+              <h2>E-mail</h2>
+              <input class="input" type="text" name="company_email" />
+            </label>
+            <label>
+              <h2>Контактный телефон</h2>
+              <input
+                class="input"
+                type="text"
+                placeholder="+375 __ ___ __ __"
+                data-slots="_"
+                name="company_phone"
+              />
+            </label>
+            <label>
+              <h2>Номер расчетного счета</h2>
+              <input
+                class="input"
+                type="text"
+                placeholder="____ ____ ____ ____ ____ ____ ____"
+                data-accept="\w"
+                data-slots="_"
+                name="company_account"
+              />
+            </label>
+            <label>
+              <h2>В банке</h2>
+              <input class="input" type="text" name="company_bank" />
+            </label>
+            <label>
+              <h2>УНП</h2>
+              <input
+                class="input"
+                type="text"
+                placeholder="___ ___ ___"
+                data-slots="_"
+                name="company_unp"
+              />
+            </label>
+            <label class="accept">
+              <input
+                class="checkbox"
+                type="checkbox"
+                name="checking"
+                onclick="check()"
+              />
+              <p>Согласен с обработкой персональных данных</p>
+            </label>
+            <button type="submit" class="send" disabled>
+              Отправить данные и скачать договор
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="modal inf modalInf">
+        <h1 class="information">Вы не заполнили все поля!</h1>
+        <button onclick="closeInf()">Вернуться</button>
+      </div>
+    </div>
+  </body>
+  <script src="./script.js"></script>
+</html>

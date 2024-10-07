@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .main {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        padding: 2%;
+      }
+
+      .main section {
+        display: flex;
+        gap: 10px;
+      }
+
+      .main > section > button {
+        padding: 10px 20px;
+        border-radius: 10px;
+        border: none;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .main > section > :last-child {
+        width: 20px;
+        padding: 10px 20px;
+        padding-right: 17px;
+      }
+
+      .main > section button img {
+        width: 20px;
+      }
+
+      .table {
+        border-collapse: collapse;
+        height: auto;
+      }
+
+      .table td {
+        padding: 8px 30px;
+      }
+
+      .tbd tr > :last-child {
+        width: 60%;
+        border: none;
+        border-bottom: 1px solid #000;
+      }
+
+      .tbd tr > :last-child section {
+        display: flex;
+        align-items: center;
+      }
+
+      .tbd > :last-child > :last-child {
+        border: none;
+      }
+
+      .tbd td button {
+        border: none;
+        cursor: pointer;
+        background: none;
+        width: 20px;
+        display: flex;
+        flex-direction: row;
+      }
+
+      tr section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      tr > :nth-child(2) button {
+        width: auto;
+        background: #eee;
+      }
+
+      .tbd tr img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .sent {
+        background: green;
+      }
+
+      .notSent {
+        background: #ccc;
+      }
+
+      .modal form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .modal form input {
+        width: 400px;
+        height: 40px;
+        border-radius: 10px;
+        border: none;
+        padding: 0 10px;
+      }
+
+      .ifNothing {
+        z-index: 999999999999999999 !important;
+        background: #000;
+      }
+
+      @media (max-width: 769px) {
+        .table {
+          font-size: 10px;
+        }
+
+        .table td {
+          padding: 2px;
+        }
+
+        .table img {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <section>
+        <button onclick="fresh()">Обновить страницу</button>
+        <button onclick="forgot()">
+          <img src="./images/exit.svg" alt="" />
+        </button>
+      </section>
+      <table border="1" class="table">
+        <thead>
+          <tr>
+            <td>ID</td>
+            <td>Номер телефона</td>
+            <td>Текст сообщения</td>
+          </tr>
+        </thead>
+        <tbody class="tbd"></tbody>
+      </table>
+      <div class="modal auth">
+        <form>
+          <input type="text" name="username" placeholder="Log in" />
+          <input type="text" name="password" placeholder="Password" />
+          <button type="button" onclick="save()">Войти</button>
+        </form>
+      </div>
+      <div class="modal ifNothing">
+        <h1 class="notMessage">Bся работа сделанa</h1>
+        <button onclick="goback()" class="notButton">
+          Запросить новый список
+        </button>
+      </div>
+    </div>
+  </body>
+  <script>
+    const url = "https://uslugipro.pl/services_api.php/list_for_viber";
+
+    function goback() {
+      document.querySelector(".ifNothing").classList.remove("active");
+    }
+
+    function forgot() {
+      localStorage.clear();
+      window.location.href = "/";
+    }
+
+    const username = localStorage.getItem("username");
+    const password = localStorage.getItem("password");
+
+    if (!username) {
+      document.querySelector(".auth").classList.add("active");
+    }
+    if (!password) {
+      document.querySelector(".auth").classList.add("active");
+    }
+
+    const basicAuthHeader = "Basic " + btoa(username + ":" + password);
+    const options = {
+      method: "GET",
+      headers: {
+        Authorization: basicAuthHeader,
+      },
+    };
+
+    function save() {
+      const username = document.querySelector("input[name=username]").value;
+      const password = document.querySelector("input[name=password]").value;
+      localStorage.setItem("username", username);
+      localStorage.setItem("password", password);
+      window.location.reload();
+    }
+
+    fetch(url, options)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data, message, status) => {
+        if (data) {
+          document.querySelector(".tbd").innerHTML = data
+            ?.map(
+              (item, index) =>
+                `
+                        <tr class='stroke${index}'>
+                          <td>${item.message_id}</td>
+                          <td>
+                            <section>
+                              <a onclick='copy(${index})' href="${item.viber_link}" target="_blank">${item.phone}</a>
+                              <button onclick='sent(${index} , ${item.message_id} , "https://uslugipro.pl/services_api.php/viber_list_not_viber?message_id=")' class='button${index}'>✘ НЕ VIBER</button>
+                              <button onclick='sent(${index} , ${item.message_id} , "https://uslugipro.pl/services_api.php/viber_list_sent?message_id=")' class='button${index}''>✔ ОТПРАВЛЕН</button>
+                              </section>
+                            </td>
+                          <td>
+                            <section>
+                              <p class="td${index}">${item.text_full}</p>
+                              <button onclick="copy(${index})">
+                                <img src='./images/png-transparent-paper-computer-icons-cut-copy-and-paste-symbol-user-interface-symbol-miscellaneous-a.svg'/>
+                              </button/>
+                           </section>
+                          </td>
+                        </tr>
+                        `
+            )
+            .join("");
+        } else {
+          document.querySelector(".ifNothing").classList.add("active");
+          document.querySelector(".notMessage").innerHTML = message;
+        }
+        console.log(data);
+      })
+      .catch((error) => {
+        document.querySelector(".ifNothing").classList.add("active");
+        document.querySelector(".notMessage").innerHTML =
+          "Произошла ошибка, <br/> Авторизируйтесь заново!";
+        document.querySelector(".notButton").innerHTML = "Авторизоваться";
+        localStorage.clear();
+      });
+
+    const copy = (index) => {
+      const text = document.querySelector(`.td${index}`).innerHTML;
+      navigator.clipboard.writeText(text);
+    };
+
+    const sent = (index, message_id, uri) => {
+      const URI = uri + message_id;
+
+      fetch(URI, options)
+        .then((response) => {
+          return response.json();
+        })
+        .then((message, status) => {
+          if (status == "error") {
+            document.querySelector(".ifNothing").classList.add("active");
+            document.querySelector(".notMessage").innerHTML = message;
+          } else {
+            if (
+              uri ==
+              "https://uslugipro.pl/services_api.php/viber_list_sent?message_id="
+            ) {
+              document.querySelector(`.stroke${index}`).classList.add("sent");
+            } else {
+              document
+                .querySelector(`.stroke${index}`)
+                .classList.add("notSent");
+            }
+            document.querySelectorAll(`.button${index}`)[0].disabled = true;
+            document.querySelectorAll(`.button${index}`)[1].disabled = true;
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+
+    function fresh() {
+      document.querySelector(".ifNothing").classList.remove("active");
+      window.location.reload();
+    }
+  </script>
+</html>

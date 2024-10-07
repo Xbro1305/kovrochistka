@@ -1,0 +1,1136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.adaptiv {
+  display: none !important;
+}
+
+nav {
+  height: 0 !important;
+  transition: all 1s ease;
+}
+
+body {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.main {
+  max-width: 1920px;
+  width: 100%;
+  overflow: hidden;
+}
+
+header {
+  position: fixed;
+  background: #fff;
+  z-index: 9999999999;
+  top: 0;
+  width: 100%;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  gap: 30px;
+}
+
+nav {
+  text-align: right;
+  align-items: flex-start !important;
+  margin-top: 100px;
+}
+
+nav section {
+  align-items: flex-start !important;
+}
+
+nav .phone {
+  padding-top: 30px;
+}
+
+nav > * {
+  display: none !important;
+}
+
+nav > section {
+  flex-direction: column;
+}
+
+.hamburger {
+  height: 50%;
+  display: none;
+}
+
+.header > a,
+.header > a img {
+  height: 90%;
+}
+
+.header a {
+  height: 100%;
+  font-size: 18px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: rgb(52, 52, 52);
+}
+
+.header > :last-child a img {
+  height: 50px;
+}
+
+.header section {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.header > :last-child a img {
+  height: 40px;
+}
+
+.phone {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-weight: 300;
+  color: #7a7a7a;
+  font-size: 16px;
+  /* margin-left: 120px; */
+}
+
+.phone a {
+  font-size: 16px;
+}
+
+.header > a > img {
+  height: 100%;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 50px;
+  width: 100%;
+  height: 1080px;
+  position: relative;
+  z-index: 99;
+  overflow: hidden;
+}
+
+.intro section {
+  padding: 7%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: rgba(0, 5, 22, 0.8);
+  gap: 50px;
+  z-index: 999;
+  width: 100%;
+  height: 1080px;
+  color: #fff;
+}
+
+.intro div {
+  display: flex;
+  gap: 20px;
+}
+
+.anchor {
+  text-decoration: none;
+  color: #fff;
+  padding: 20px 60px;
+  border-radius: 5px;
+  border: 3px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calc {
+  background: #dd193f;
+  border: #dd193f;
+}
+
+.intro h1 {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.intro p {
+  font-size: 18px;
+  width: 900px;
+  line-height: 50px;
+  font-weight: 100 !important;
+}
+
+.intro > img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 1;
+  left: 0;
+  transform: scale(1.5);
+}
+
+#services {
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+#services section {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#stages > div {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+#stages div > :last-child {
+  display: flex;
+  align-items: flex-start;
+}
+
+#services section div {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  gap: 20px;
+}
+
+#services > h1 {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+#services div > h1 {
+  font-size: 24px;
+}
+
+#services div span {
+  font-size: 18px;
+  color: #999;
+  margin-bottom: 50px;
+  width: 97%;
+}
+
+#services div p {
+  font-size: 18px;
+  margin-top: -10px;
+}
+
+#services div > img {
+  width: 100%;
+  height: 370px;
+}
+
+#services > p {
+  font-size: 18px;
+  font-weight: 300;
+  width: 620px;
+  margin-bottom: 80px;
+  text-align: center;
+  line-height: 150%;
+}
+
+#services .anchor {
+  width: 200px;
+  padding: 15px 20px !important;
+}
+
+#calc {
+  position: relative;
+  height: 1080px;
+}
+
+#calc img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#calc section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 7%;
+  gap: 60px;
+  z-index: 9999999;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 5, 22, 0.8);
+}
+
+#reviews div {
+  border-radius: 10px;
+}
+
+#calc h1 {
+  font-size: 36px;
+  font-weight: 600;
+  color: #fff;
+}
+
+#calc form {
+  display: flex;
+  gap: 20px;
+}
+
+#calc input {
+  width: 300px;
+  outline: none;
+  padding: 0 10px;
+  font-size: 16px;
+}
+
+#price h1 {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #dd193f;
+  color: #fff;
+  font-size: 36px;
+}
+
+#price {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+#price > section > section {
+  display: flex;
+  flex-direction: column;
+}
+
+#price > section {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+#price h2,
+#price h3 {
+  display: flex;
+  padding: 0% 5% !important;
+}
+
+#price h2 > :first-child,
+#price h3 > :first-child {
+  width: 60%;
+}
+
+#price h2 {
+  font-size: 20px !important;
+}
+
+#price h3 > p {
+  color: #666;
+  font-weight: 300;
+  word-spacing: 5px;
+  font-size: 18px;
+  line-height: 150%;
+}
+
+#stages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
+  padding: 15% 5% 5%;
+}
+
+#stages > h1 {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+#stages section {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+#stages section h1 {
+  width: 25% !important;
+  display: flex;
+  align-items: center;
+}
+
+.line {
+  display: block;
+  width: 100%;
+  height: 1px;
+  border: 1px solid orange;
+}
+
+#stages section h1 p {
+  border-radius: 50%;
+  background: orange;
+  padding: 20px 30px;
+  font-size: 24px;
+  color: #fff;
+}
+
+#stages section > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start !important;
+  width: 25%;
+}
+
+#stages section > div h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+#stages section > div p {
+  font-size: 18px;
+  color: #666;
+  line-height: 36px;
+  width: 90%;
+}
+
+#reviews {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
+  padding: 5%;
+  background: #eee;
+}
+
+#reviews > h1 {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+#reviews div {
+  width: 80%;
+  padding: 2%;
+  background: #fff;
+}
+
+#reviews div h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+#reviews div p {
+  color: #666;
+  font-size: 18px;
+}
+
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  padding: 10% 5%;
+  background: #dd193f;
+}
+
+#contact > :first-child {
+  display: flex;
+  flex-direction: column !important;
+  gap: 10px;
+}
+
+#contact > :first-child a {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+  text-decoration: none;
+  width: 100% !important;
+}
+
+#contact p {
+  width: 700px;
+  line-height: 30px;
+  font-size: 16px;
+}
+
+#contact > :nth-child(2) {
+  display: flex;
+  flex-direction: row !important;
+  gap: 30px;
+}
+
+#contact > :nth-child(2) a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px !important;
+  height: 30px !important;
+}
+
+#contact a img {
+  width: 100%;
+  height: 100%;
+}
+
+#orient {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  padding: 10% 5%;
+}
+
+#orient img {
+  width: calc((100% - 150px) / 3);
+  /* aspect-ratio: 1/1; */
+}
+
+#location {
+  padding: 0;
+  height: 500px;
+}
+
+#location iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.active {
+  display: flex !important;
+  z-index: 9999999;
+}
+
+button {
+  cursor: pointer;
+}
+
+.modal {
+  background: #00000080;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999999999999999;
+}
+
+.modal > h1 {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.modal button {
+  padding: 10px 25px;
+  background: #dd193f;
+  color: #fff;
+  margin-top: 30px;
+  border: none;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 890px) {
+  .hamburger {
+    display: block;
+  }
+
+  .anchors {
+    display: none !important;
+  }
+
+  nav.header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header {
+    height: 70px !important;
+  }
+
+  .nav.active {
+    height: auto !important;
+    margin-top: 70px;
+    padding: 30px;
+    display: flex !important;
+    margin-bottom: 30px;
+  }
+
+  nav.active * {
+    display: flex !important;
+  }
+
+  .intro {
+    height: 600px;
+    margin-top: -30px;
+  }
+
+  #services h1 {
+    font-size: 30px;
+  }
+
+  #services section {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  #services section div {
+    width: 100%;
+  }
+
+  #calc form {
+    flex-direction: column;
+  }
+
+  #calc input {
+    height: 50px;
+  }
+
+  #price h2 {
+    font-size: 16px;
+  }
+
+  #price h1 {
+    height: 300px !important;
+    font-size: 30px;
+  }
+
+  #price h3 {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #price h3 > :first-child {
+    font-size: 14px;
+    width: 50%;
+  }
+
+  #price h3 > :last-child {
+    width: 40%;
+  }
+
+  #stages h1 {
+    font-size: 24px;
+  }
+
+  #stages h2 {
+    font-size: 16px !important;
+  }
+
+  #stages h1 p {
+    font-size: 18px !important;
+    padding: 14px 20px !important;
+  }
+
+  #stages {
+    gap: 30px;
+  }
+
+  #stages > :last-child p {
+    font-size: 14px !important;
+    line-height: 110% !important;
+  }
+
+  #reviews h1 {
+    font-size: 24px;
+    margin-bottom: -30px;
+  }
+
+  #reviews div {
+    width: 100%;
+  }
+
+  #reviews div h2 {
+    font-size: 18px;
+  }
+
+  #reviews div p {
+    font-size: 16px;
+  }
+
+  #contact {
+    gap: 30px;
+  }
+
+  #contact > :first-child a {
+    font-size: 20px;
+  }
+
+  #contact p {
+    font-size: 18px;
+    line-height: 130%;
+  }
+
+  #orient {
+    flex-direction: column;
+  }
+
+  #orient img {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .nav p {
+    font-size: 12px;
+  }
+
+  .logo {
+    height: 35% !important;
+    display: flex;
+    align-items: center;
+  }
+
+  .hamburger {
+    height: 35%;
+    aspect-ratio: 1/1;
+  }
+
+  .intro h1 {
+    font-size: 22px;
+  }
+
+  .intro p {
+    font-size: 16px;
+    width: 100%;
+    line-height: 130%;
+  }
+
+  .intro {
+    height: 300px;
+  }
+
+  .anchor {
+    font-size: 12px !important;
+    padding: 10px 20px;
+  }
+
+  #service {
+    gap: 30px;
+  }
+
+  #services > h1 {
+    font-size: 22px;
+  }
+
+  #services p {
+    width: 100%;
+    font-size: 14px;
+    margin-bottom: -20px;
+  }
+
+  #services div h1 {
+    font-size: 18px;
+  }
+
+  #services div span {
+    font-size: 14px;
+  }
+
+  #calc {
+    height: 400px;
+  }
+
+  #price section {
+    gap: 20px;
+  }
+
+  #price > h1 {
+    font-size: 18px;
+    height: 200px !important;
+  }
+
+  #price h2 {
+    font-size: 14px !important;
+  }
+
+  #price h3 p {
+    font-size: 12px !important;
+  }
+
+  #stages > :last-child > scetion {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  #stages > :last-child div {
+    width: 100%;
+    line-height: 110% !important;
+  }
+
+  #stages > :last-child p {
+    font-size: 12px !important;
+    line-height: 110% !important;
+  }
+
+  #reviews {
+    gap: 30px;
+  }
+
+  #reviews > h1 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  #reviews div h2 {
+    font-size: 14px;
+  }
+
+  #reviews div p {
+    font-size: 12px;
+    line-height: 150%;
+  }
+
+  #contact {
+    gap: 30px;
+  }
+
+  #contact > :nth-child(1) a {
+    width: 100%;
+    text-decoration: none;
+    color: black;
+  }
+
+  #contact > :nth-child(2) a,
+  #contact a img {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  #contact p {
+    width: 100%;
+  }
+
+  #location,
+  iframe {
+    height: 300px !important;
+  }
+
+  .adaptiv {
+    display: flex !important;
+  }
+
+  .header {
+    gap: 0;
+    height: 100px;
+  }
+
+  .adaptiv img {
+    height: 25px !important;
+  }
+
+  #orient img {
+    height: auto !important;
+  }
+
+  #stages {
+    height: fit-content;
+    padding-bottom: 50px;
+  }
+
+  #stages > div {
+    flex-direction: row;
+  }
+
+  #stages > div > section {
+    gap: 30px;
+    flex-direction: column;
+  }
+
+  #stages > div > :last-child div {
+    height: 80px;
+  }
+
+  #stages > div > :first-child {
+    gap: 0;
+  }
+
+  #stages > div > :first-child h1 {
+    flex-direction: column;
+  }
+
+  .line {
+    width: 1px;
+    height: 70px;
+  }
+}
+
+.form {
+  display: flex;
+  gap: 50px;
+  background: #eeeeee;
+  width: 100% !important;
+}
+
+.form > section {
+  overflow: hidden;
+  max-width: 50%;
+  width: 100%;
+  height: 100%;
+}
+
+.form img {
+  width: 140%;
+  height: 100%;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 2% 0;
+  width: 40%;
+}
+
+.right form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.right > h1 {
+  color: #333;
+}
+
+.right p {
+  font-weight: 200;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.right input {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  padding: 15px 0px;
+  font-size: 16px;
+  background: transparent;
+  outline: none;
+}
+
+.right input::placeholder {
+  color: #bbb;
+}
+
+.right input:focus {
+  border-bottom: 2px solid dodgerblue;
+}
+
+.right label {
+  width: 100%;
+}
+
+.right label h2 {
+  font-size: 16px;
+  font-weight: 200;
+  color: #666;
+  margin-top: 5px;
+}
+
+.accept {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 5px;
+}
+
+.accept input {
+  margin-top: 2px;
+  width: auto;
+}
+
+.right button {
+  border: none;
+  border-radius: 5px;
+  padding: 15px 30px;
+  font-size: 16px;
+  background: #dd193f;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.right button:hover {
+  background: dodgerblue;
+}
+
+.right button:disabled {
+  background: #666;
+}
+
+.input:focus::placeholder {
+  color: #333;
+}
+
+.cntrct {
+  border-radius: 5px;
+  padding: 15px 30px;
+  border: none;
+  background: #eee;
+  color: #000000;
+  text-decoration: none;
+}
+
+.information {
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form > section {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .right {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .right > h1 {
+    font-size: 20px;
+  }
+
+  .right p {
+    font-size: 14px;
+  }
+
+  .cntrct {
+    font-size: 12px;
+  }
+
+  .information {
+    font-size: 16px !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .right input {
+    font-size: 12px;
+  }
+
+  .right form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .right button {
+    font-size: 12px;
+  }
+}
+
+.introducing {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(./images/zal.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 120px;
+  background-size: cover;
+  min-height: 500px;
+  height: calc(100vh - 120px);
+  max-height: 800px;
+}
+
+.introducing img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+}
+
+.introducing div {
+  width: 100%;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+  background: #00000080;
+  padding: 0 5%;
+  height: 100%;
+  gap: 50px;
+}
+
+.introducing .line {
+  width: 300px;
+  text-align: center;
+  border: 1px solid #fff !important;
+  height: 1px;
+}
+
+.introducing h1 {
+  font-size: 36px;
+  font-weight: 200;
+  text-align: center;
+}
+
+.introducing p {
+  font-size: 24px;
+  font-weight: 100;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .introducing {
+    margin-top: -30px !important;
+  }
+
+  .introducing h1 {
+    font-size: 24px;
+  }
+
+  .introducing p {
+    font-size: 16px;
+  }
+
+  .introducing div {
+    gap: 30px;
+  }
+}
